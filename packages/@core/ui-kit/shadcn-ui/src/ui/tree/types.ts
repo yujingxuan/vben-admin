@@ -51,6 +51,7 @@ export function treePropsDefaults() {
     defaultExpandedLevel: 0,
     disabled: false,
     disabledField: 'disabled',
+    expanded: () => [],
     iconField: 'icon',
     labelField: 'label',
     multiple: false,

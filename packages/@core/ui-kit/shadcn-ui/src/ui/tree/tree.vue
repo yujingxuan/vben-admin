@@ -159,21 +159,19 @@ function collapseAll() {
 }
 
 function checkAll() {
-  if (!props.multiple) return;
-  modelValue.value = [
-    ...new Set(
-      flattenData.value
-        .filter((item) => !get(item.value, props.disabledField))
-        .map((item) => get(item.value, props.valueField)),
-    ),
-  ];
-  updateTreeValue();
+  if (props.multiple) {
+    modelValue.value = flattenData.value.map((item) =>
+      get(item.value, props.valueField),
+    );
+    updateTreeValue();
+  }
 }
 
 function unCheckAll() {
-  if (!props.multiple) return;
-  modelValue.value = [];
-  updateTreeValue();
+  if (props.multiple) {
+    modelValue.value = [];
+    updateTreeValue();
+  }
 }
 
 function isNodeDisabled(item: FlattenedItem<Recordable<any>>) {
@@ -200,12 +198,11 @@ function onSelect(item: FlattenedItem<Recordable<any>>, isSelected: boolean) {
           get(i.value, props.valueField) === get(item.value, props.valueField)
         );
       })
-      ?.parents?.filter((item) => !get(item, props.disabledField))
-      ?.forEach((p) => {
-        if (Array.isArray(modelValue.value) && !modelValue.value.includes(p)) {
-          modelValue.value.push(p);
-        }
-      });
+      ?.parents?.forEach((p) => {
+      if (Array.isArray(modelValue.value) && !modelValue.value.includes(p)) {
+        modelValue.value.push(p);
+      }
+    });
   }
   if (
     !props.checkStrictly &&
@@ -219,8 +216,7 @@ function onSelect(item: FlattenedItem<Recordable<any>>, isSelected: boolean) {
           get(i.value, props.valueField) === get(item.value, props.valueField)
         );
       })
-      ?.parents?.filter((item) => !get(item, props.disabledField))
-      ?.reverse()
+      ?.parents?.reverse()
       .forEach((p) => {
         const children = flattenData.value.filter((i) => {
           return (
@@ -326,7 +322,7 @@ defineExpose({
         :class="
           cn('cursor-pointer', getNodeClass?.(item), {
             'data-[selected]:bg-accent': !multiple,
-            'text-foreground/50 cursor-not-allowed': isNodeDisabled(item),
+            'cursor-not-allowed': isNodeDisabled(item),
           })
         "
         v-bind="
