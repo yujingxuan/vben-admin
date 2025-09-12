@@ -5,6 +5,10 @@
       "path": "apps/backend-mock",
     },
     {
+      "name": "@ruixue/erp",
+      "path": "apps/ruixue",
+    },
+    {
       "name": "@vben/web-antd",
       "path": "apps/web-antd",
     },
@@ -139,6 +143,10 @@
     {
       "name": "@vben/preferences",
       "path": "packages/preferences",
+    },
+    {
+      "name": "@yujingxuan/pro",
+      "path": "packages/pro",
     },
     {
       "name": "@vben/stores",

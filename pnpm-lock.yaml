@@ -6,6 +6,9 @@ settings:
 
 catalogs:
   default:
+    '@ant-design/icons-vue':
+      specifier: ^7.0.1
+      version: 7.0.1
     '@changesets/changelog-github':
       specifier: ^0.5.1
       version: 0.5.1
@@ -534,6 +537,10 @@ overrides:
 importers:
 
   .:
+    dependencies:
+      '@ant-design/icons-vue':
+        specifier: 'catalog:'
+        version: 7.0.1(vue@3.5.17(typescript@5.8.3))
     devDependencies:
       '@changesets/changelog-github':
         specifier: 'catalog:'
@@ -650,6 +657,85 @@ importers:
       h3:
         specifier: 'catalog:'
         version: 1.15.3
+
+  apps/ruixue:
+    dependencies:
+      '@tanstack/vue-query':
+        specifier: 'catalog:'
+        version: 5.81.5(vue@3.5.17(typescript@5.8.3))
+      '@vben-core/menu-ui':
+        specifier: workspace:*
+        version: link:../../packages/@core/ui-kit/menu-ui
+      '@vben/access':
+        specifier: workspace:*
+        version: link:../../packages/effects/access
+      '@vben/common-ui':
+        specifier: workspace:*
+        version: link:../../packages/effects/common-ui
+      '@vben/constants':
+        specifier: workspace:*
+        version: link:../../packages/constants
+      '@vben/hooks':
+        specifier: workspace:*
+        version: link:../../packages/effects/hooks
+      '@vben/icons':
+        specifier: workspace:*
+        version: link:../../packages/icons
+      '@vben/layouts':
+        specifier: workspace:*
+        version: link:../../packages/effects/layouts
+      '@vben/locales':
+        specifier: workspace:*
+        version: link:../../packages/locales
+      '@vben/plugins':
+        specifier: workspace:*
+        version: link:../../packages/effects/plugins
+      '@vben/preferences':
+        specifier: workspace:*
+        version: link:../../packages/preferences
+      '@vben/request':
+        specifier: workspace:*
+        version: link:../../packages/effects/request
+      '@vben/stores':
+        specifier: workspace:*
+        version: link:../../packages/stores
+      '@vben/styles':
+        specifier: workspace:*
+        version: link:../../packages/styles
+      '@vben/types':
+        specifier: workspace:*
+        version: link:../../packages/types
+      '@vben/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
+      '@vueuse/core':
+        specifier: 'catalog:'
+        version: 13.4.0(vue@3.5.17(typescript@5.8.3))
+      '@yujingxuan/pro':
+        specifier: workspace:*
+        version: link:../../packages/pro
+      ant-design-vue:
+        specifier: 'catalog:'
+        version: 4.2.6(vue@3.5.17(typescript@5.8.3))
+      dayjs:
+        specifier: 'catalog:'
+        version: 1.11.13
+      json-bigint:
+        specifier: 'catalog:'
+        version: 1.0.0
+      pinia:
+        specifier: ^3.0.3
+        version: 3.0.3(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))
+      vue:
+        specifier: ^3.5.17
+        version: 3.5.17(typescript@5.8.3)
+      vue-router:
+        specifier: 'catalog:'
+        version: 4.5.1(vue@3.5.17(typescript@5.8.3))
+    devDependencies:
+      '@types/json-bigint':
+        specifier: 'catalog:'
+        version: 1.0.4
 
   apps/web-antd:
     dependencies:
@@ -1770,6 +1856,72 @@ importers:
         specifier: workspace:*
         version: link:../@core/base/typings
 
+  packages/pro:
+    dependencies:
+      '@ant-design/icons-vue':
+        specifier: 'catalog:'
+        version: 7.0.1(vue@3.5.17(typescript@5.8.3))
+      '@vben-core/composables':
+        specifier: workspace:*
+        version: link:../@core/composables
+      '@vben-core/form-ui':
+        specifier: workspace:*
+        version: link:../@core/ui-kit/form-ui
+      '@vben-core/layout-ui':
+        specifier: workspace:*
+        version: link:../@core/ui-kit/layout-ui
+      '@vben-core/menu-ui':
+        specifier: workspace:*
+        version: link:../@core/ui-kit/menu-ui
+      '@vben-core/popup-ui':
+        specifier: workspace:*
+        version: link:../@core/ui-kit/popup-ui
+      '@vben-core/shadcn-ui':
+        specifier: workspace:*
+        version: link:../@core/ui-kit/shadcn-ui
+      '@vben-core/shared':
+        specifier: workspace:*
+        version: link:../@core/base/shared
+      '@vben-core/tabs-ui':
+        specifier: workspace:*
+        version: link:../@core/ui-kit/tabs-ui
+      '@vben/constants':
+        specifier: workspace:*
+        version: link:../constants
+      '@vben/hooks':
+        specifier: workspace:*
+        version: link:../effects/hooks
+      '@vben/icons':
+        specifier: workspace:*
+        version: link:../icons
+      '@vben/locales':
+        specifier: workspace:*
+        version: link:../locales
+      '@vben/preferences':
+        specifier: workspace:*
+        version: link:../preferences
+      '@vben/stores':
+        specifier: workspace:*
+        version: link:../stores
+      '@vben/types':
+        specifier: workspace:*
+        version: link:../types
+      '@vben/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@vueuse/core':
+        specifier: 'catalog:'
+        version: 13.4.0(vue@3.5.17(typescript@5.8.3))
+      ant-design-vue:
+        specifier: 'catalog:'
+        version: 4.2.6(vue@3.5.17(typescript@5.8.3))
+      vue:
+        specifier: ^3.5.17
+        version: 3.5.17(typescript@5.8.3)
+      vue-router:
+        specifier: 'catalog:'
+        version: 4.5.1(vue@3.5.17(typescript@5.8.3))
+
   packages/stores:
     dependencies:
       '@vben-core/preferences':
@@ -2721,10 +2873,6 @@ packages:
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
-
-  '@babel/runtime@7.27.0':
-    resolution: {integrity: sha512-VtPOkrdPHZsKc/clNqyi9WUA8TINkZ4cGk63UUE3u4pmB2k+ZMQRDuIOagv8UVd6j7k0T3+RRIb7beKTebNbcw==}
-    engines: {node: '>=6.9.0'}
 
   '@babel/runtime@7.27.6':
     resolution: {integrity: sha512-vbavdySgbTTrmFE+EsiqUTzlOr5bzlnJtUv9PynGCAKvfQqjIXbvFdumPM/GxMDfyuGMJaJAU6TO4zc1Jf1i8Q==}
@@ -9954,9 +10102,6 @@ packages:
   regenerate@1.4.2:
     resolution: {integrity: sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==}
 
-  regenerator-runtime@0.14.1:
-    resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
-
   regex-recursion@6.0.2:
     resolution: {integrity: sha512-0YCaSCq2VRIebiaUviZNs0cBz1kg5kVS2UKUfNIx8YVs1cN3AV7NTctO5FOKBA+UT2BPJIWZauYHPqJODG50cg==}
 
@@ -10374,6 +10519,7 @@ packages:
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
+    deprecated: The work that was done in this beta branch won't be included in future versions
 
   sourcemap-codec@1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
@@ -12750,10 +12896,6 @@ snapshots:
       '@babel/plugin-transform-typescript': 7.27.0(@babel/core@7.26.10)
     transitivePeerDependencies:
       - supports-color
-
-  '@babel/runtime@7.27.0':
-    dependencies:
-      regenerator-runtime: 0.14.1
 
   '@babel/runtime@7.27.6': {}
 
@@ -15936,7 +16078,7 @@ snapshots:
     dependencies:
       '@ant-design/colors': 6.0.0
       '@ant-design/icons-vue': 7.0.1(vue@3.5.17(typescript@5.8.3))
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.27.6
       '@ctrl/tinycolor': 4.1.0
       '@emotion/hash': 0.9.2
       '@emotion/unitless': 0.8.1
@@ -20651,8 +20793,6 @@ snapshots:
       regenerate: 1.4.2
 
   regenerate@1.4.2: {}
-
-  regenerator-runtime@0.14.1: {}
 
   regex-recursion@6.0.2:
     dependencies:

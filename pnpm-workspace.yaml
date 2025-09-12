@@ -14,6 +14,7 @@ packages:
   - playground
 
 catalog:
+  '@ant-design/icons-vue': ^7.0.1
   '@ast-grep/napi': ^0.37.0
   '@changesets/changelog-github': ^0.5.1
   '@changesets/cli': ^2.29.5
