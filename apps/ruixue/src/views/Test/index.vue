@@ -1,7 +1,13 @@
 <script setup lang="ts">
-import { Table } from '@yujingxuan/pro';
+import useTable from './ProTable/useTable';
+import { formOptions, gridOptions } from './useSchema';
+
+const { ProTable } = useTable({
+  formOptions,
+  gridOptions,
+});
 </script>
 
 <template>
-  <Table />
+  <ProTable />
 </template>

@@ -663,6 +663,9 @@ importers:
       '@tanstack/vue-query':
         specifier: 'catalog:'
         version: 5.81.5(vue@3.5.17(typescript@5.8.3))
+      '@vben-core/form-ui':
+        specifier: workspace:*
+        version: link:../../packages/@core/ui-kit/form-ui
       '@vben-core/menu-ui':
         specifier: workspace:*
         version: link:../../packages/@core/ui-kit/menu-ui
@@ -1885,6 +1888,12 @@ importers:
       '@vben-core/tabs-ui':
         specifier: workspace:*
         version: link:../@core/ui-kit/tabs-ui
+      '@vben/access':
+        specifier: workspace:*
+        version: link:../effects/access
+      '@vben/common-ui':
+        specifier: workspace:*
+        version: link:../effects/common-ui
       '@vben/constants':
         specifier: workspace:*
         version: link:../constants
@@ -1921,6 +1930,9 @@ importers:
       vue-router:
         specifier: 'catalog:'
         version: 4.5.1(vue@3.5.17(typescript@5.8.3))
+      vxe-pc-ui:
+        specifier: 'catalog:'
+        version: 4.7.16(vue@3.5.17(typescript@5.8.3))
 
   packages/stores:
     dependencies:

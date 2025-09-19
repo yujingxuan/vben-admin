@@ -59,8 +59,9 @@ const [Modal, modalApi] = useVbenModal({
   onOpenChange(isOpen: boolean) {
     if (isOpen) {
       const { values } = modalApi.getData<Record<string, any>>();
+      console.log('values', values);
       if (values) {
-        formApi.setValues(values);
+        formApi.setValues({ ...values, field3: '1' });
       }
     }
   },
