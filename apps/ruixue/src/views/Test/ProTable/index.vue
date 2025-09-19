@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { Button, Tag } from 'ant-design-vue';
 
+import { formOptions, gridOptions } from '../useSchema';
 import useTable from './useTable';
 
-const { ProTable, gridApi } = useTable();
+const { ProTable, gridApi } = useTable({
+  formOptions,
+  gridOptions,
+});
 
 const onBatchDelete = () => {
   console.log('onBatchDelete', gridApi.grid.getCheckboxRecords());
